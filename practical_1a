@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Student Dashboard - IIIT Pune</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Arial, sans-serif;
+}
+body {
+display: flex;
+}
+.sidebar {
+width: 250px;
+height: 100vh;
+background: #2c3e50;
+color: white;
+padding: 20px;
+}
+.sidebar h2 {
+text-align: center;
+margin-bottom: 20px;
+}
+.sidebar ul {
+list-style: none;
+}
+.sidebar ul li {
+padding: 15px;
+cursor: pointer;
+border-bottom: 1px solid #34495e;
+}
+.sidebar ul li:hover {
+background: #34495e;
+}
+.main-content {
+flex: 1;
+padding: 20px;
+}
+.header {
+background: #2980b9;
+padding: 15px;
+color: white;
+text-align: center;
+font-size: 24px;
+}
+.cards {
+display: flex;
+gap: 20px;
+margin-top: 20px;
+}
+.card {
+flex: 1;
+background: #ecf0f1;
+padding: 20px;
+border-radius: 8px;
+}
+</style>
+</head>
+<body>
+<div
+class="sidebar">
+<h2>IIIT Pune</h2>
+<u<l>li>Dashboard</li>
+<li>Courses</li>
+<li>Assignments</li>
+<li>Results</li>
+<li>Profile</li>
+<li>Logout</li>
+</ul>
+</div>
+<div class="main-content">
+<div class="header">Student Dashboard</div>
+<div class="cards">
+<div class="card">
+<h3>Enrolled Courses</h3>
+<p>5 Courses</p>
+</div>
+<div class="card">
+<h3>Pending Assignments</h3>
+<p>2 Assignments</p>
+</div>
+<div class="card">
+<h3>Upcoming Exams</h3>
+<p>3 Exams</p>
+</div>
+</div>
+</div>
+</body>
+</html>
