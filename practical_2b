@@ -1,0 +1,31 @@
+
+sudo apt update
+sudo apt install docker.io
+
+sudo docker images
+
+sudo docker ps
+
+sudo docker run --name Java -it -d openjdk
+
+sudo docker exec -it Java jshell
+
+System.out.print("hello");
+
+docker ps
+
+int a=10;
+
+int b=20;
+
+System.out.println(a+b);
+
+/exit
+
+sudo docker ps
+
+sudo docker images
+
+
+sudo docker run --name PYTHON -it -d python
+
