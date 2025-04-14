@@ -1,0 +1,75 @@
+//////////data.html
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+</head>
+<body>
+    <h1>User List</h1>
+    <ul id="userList"></ul>
+
+    <script>
+        // Get users from localStorage and display them
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const userList = document.getElementById('userList');
+        users.forEach(user => {
+            const li = document.createElement('li');
+            li.textContent = `Name: ${user.name}, Email: ${user.email}`;
+            userList.appendChild(li);
+        });
+    </script>
+</body>
+</html>
+
+
+
+//////////registration.html
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <form id="registrationForm">
+        <input type="text" id="name" placeholder="Name" required><br>
+        <input type="email" id="email" placeholder="Email" required><br>
+        <input type="password" id="password" placeholder="Password" required><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+////////////script.js
+
+
+document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // Get form data
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    // Create a user object
+    const user = {
+        name: name,
+        email: email,
+        password: password
+    };
+    // Use AJAX to POST data (simulated via local storage)
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+    users.push(user);
+    localStorage.setItem('users', JSON.stringify(users));
+    // Redirect to data.html to show list of users
+    window.location.href = 'data.html';
+});
